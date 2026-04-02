@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 import toast from 'react-hot-toast';
 export default function Card({ time, name, description, image, link }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleClick = () => {
     // if (link) navigate(link);
     toast.error('hey i really want to self host this so you can see my projects, but i have 1 day to do this web, ill add later')

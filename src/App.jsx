@@ -3,11 +3,12 @@ import './App.css'
 import projects from './constants/projects'
 import Card from './components/Card'
 import Space from './components/Space'
-import { Toaster } from 'react-hot-toast'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   const [isNightMode, setIsNightMode] = useState(false)
+  const baseUrl = import.meta.env.BASE_URL
 
   useEffect(() => {
     document.documentElement.dataset.theme = isNightMode ? 'night' : 'day'
@@ -31,12 +32,10 @@ function App() {
           {isNightMode ? (
             <>
               <MoonIcon className="theme-toggle__icon" aria-hidden="true" />
-              {/* <span>Night</span> */}
             </>
           ) : (
             <>
               <SunIcon className="theme-toggle__icon" aria-hidden="true" />
-              {/* <span>Day</span> */}
             </>
           )}
         </button>
@@ -55,7 +54,7 @@ function App() {
         <section id="next-steps">
           <div id="docs">
             <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#documentation-icon"></use>
+              <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
             </svg>
             <h2>projects</h2>
             <p>stuffs i have worked on</p>
@@ -69,7 +68,7 @@ function App() {
           </div>
           <div id="social">
             <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#social-icon"></use>
+              <use href={`${baseUrl}icons.svg#social-icon`}></use>
             </svg>
             <h2>connect</h2>
             <p>my social profiles</p>
@@ -83,7 +82,7 @@ function App() {
                     role="presentation"
                     aria-hidden="true"
                   >
-                    <use href="/icons.svg#github-icon"></use>
+                    <use href={`${baseUrl}icons.svg#github-icon`}></use>
                   </svg>
                   GitHub
                 </a>
@@ -95,7 +94,7 @@ function App() {
                     role="presentation"
                     aria-hidden="true"
                   >
-                    <use href="/icons.svg#discord-icon"></use>
+                    <use href={`${baseUrl}icons.svg#discord-icon`}></use>
                   </svg>
                   Discord
                 </a>
@@ -106,8 +105,8 @@ function App() {
 
         <div className="ticks"></div>
         <section id="spacer"></section>
-        <Toaster />
       </div>
+      <Toaster position="bottom-right" />
     </>
   )
 }

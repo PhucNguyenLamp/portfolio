@@ -16,6 +16,10 @@ import {
 
 export default function Space({ opacity = 0.2 }) {
     const mountRef = useRef(null)
+    const bananaMtlUrl = new URL('../assets/models/banana/source/export_banana.mtl', import.meta.url).href
+    const bananaObjUrl = new URL('../assets/models/banana/source/export_banana.obj', import.meta.url).href
+    const bananaTextureUrl = new URL('../assets/models/banana/textures/Diffuse.png', import.meta.url).href
+    const lensflareTextureUrl = new URL('../assets/models/lensflare/textures/lensflare3.png', import.meta.url).href
 
     useEffect(() => {
         const mount = mountRef.current
@@ -61,11 +65,11 @@ export default function Space({ opacity = 0.2 }) {
         let banana = null
         let frameId = 0
 
-        mtlLoader.load('./models/banana/source/export_banana.mtl', (materials) => {
+        mtlLoader.load(bananaMtlUrl, (materials) => {
             materials.preload()
             objLoader.setMaterials(materials)
-            objLoader.load('./models/banana/source/export_banana.obj', (object) => {
-                const texture = textureLoader.load('./models/banana/textures/Diffuse.png')
+            objLoader.load(bananaObjUrl, (object) => {
+                const texture = textureLoader.load(bananaTextureUrl)
                 object.traverse((child) => {
                     if (child.isMesh) {
                         child.material.map = texture
@@ -94,7 +98,7 @@ export default function Space({ opacity = 0.2 }) {
 
         scene.add(new THREE.AmbientLight(0xffffff, 0.05))
 
-        const textureFlare = textureLoader.load('./models/lensflare/textures/lensflare3.png')
+        const textureFlare = textureLoader.load(lensflareTextureUrl)
         const lensflare = new Lensflare()
         lensflare.addElement(new LensflareElement(textureFlare, 30, 0.7, sunlight.color))
         lensflare.addElement(new LensflareElement(textureFlare, 40, 0.9, sunlight.color))
