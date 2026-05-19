@@ -41,30 +41,13 @@ function App() {
         </button>
 
         <section id="center">
-          <div className="hero text-4xl font-bold">
-            phuc nguyen
-          </div>
-          <div className="hero">
-            software dev
-          </div>
-        </section>
-
-        <div className="ticks"></div>
-
-        <section id="next-steps">
-          <div id="docs">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
-            </svg>
-            <h2>projects</h2>
-            <p>stuffs i have worked on</p>
-            <ul className='flex flex-col'>
-              {projects.map((project, index) => (
-                <Card key={index} {...project} />
-              ))}
-            </ul>
-            <div> You've reached the end!</div>
-            <div> i've got more projects on my <a href="https://github.com/PhucNguyenLamp" target="_blank" className='underline'>github</a>, but i thought they would be irrelevant to show you here</div>
+          <div className="flex flex-col items-center xl:items-start justify-center">
+            <div className="hero text-4xl font-bold">
+              phuc nguyen
+            </div>
+            <div className="hero">
+              software dev
+            </div>
           </div>
           <div id="social">
             <svg className="icon" role="presentation" aria-hidden="true">
@@ -88,6 +71,31 @@ function App() {
                 </a>
               </li>
               <li>
+                <a href="https://leetcode.com/u/PhucNguyenLamp" target="_blank">
+                  <svg
+                    className="button-icon"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <use href={`${baseUrl}icons.svg#leetcode-icon`}></use>
+                  </svg>
+                  LeetCode
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/in/phucnguyenlamp/" target="_blank">
+                  <svg
+                    className="button-icon"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <use href={`${baseUrl}icons.svg#linkedin-icon`}></use>
+                  </svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
                 <a href="https://discord.com/users/345935986217320449" target="_blank">
                   <svg
                     className="button-icon"
@@ -99,8 +107,66 @@ function App() {
                   Discord
                 </a>
               </li>
+              
+
+              <li>
+                <a href="https://www.reddit.com/user/LampPost2908/" target="_blank">
+                  <svg
+                    className="button-icon"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <use href={`${baseUrl}icons.svg#reddit-icon`}></use>
+                  </svg>
+                  Reddit
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/xIampx" target="_blank">
+                  <svg
+                    className="button-icon"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <use href={`${baseUrl}icons.svg#facebook-icon`}></use>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@xIampx" target="_blank">
+                  <svg
+                    className="button-icon"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <use href={`${baseUrl}icons.svg#youtube-icon`}></use>
+                  </svg>
+                  Youtube
+                </a>
+              </li>
             </ul>
           </div>
+        </section>
+
+        <div className="ticks"></div>
+
+        <section id="next-steps">
+          <div id="docs">
+            <svg className="icon" role="presentation" aria-hidden="true">
+              <use href={`${baseUrl}icons.svg#documentation-icon`}></use>
+            </svg>
+            <h2>projects</h2>
+            <p>stuffs i have worked on</p>
+            <ul className='flex flex-col'>
+              {projects.map((project, index) => (
+                <Card key={index} {...project} />
+              ))}
+            </ul>
+            <div> You've reached the end!</div>
+            <div> i've got more projects on my <a href="https://github.com/PhucNguyenLamp" target="_blank" className='underline'>github</a>, but i thought they would be irrelevant to show you here</div>
+          </div>
+
         </section>
 
         <div className="ticks"></div>
